@@ -45,7 +45,7 @@ EOF
 # Parse CLI flags
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --help | -h | -?)
+        --help | -h | "-?")
             usage
             exit 0
             ;;
