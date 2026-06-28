@@ -13,8 +13,9 @@ NAME_ONLY=false
 AGENT_ARGS=()
 
 usage() {
+    local cmd=$(basename "$0")
     cat << EOF
-Usage: $(basename "$0") [OPTIONS] [-- AGENT_ARGS...]
+Usage: $cmd [OPTIONS] [-- AGENT_ARGS...]
 
 Manage a Docker sandbox for the current workspace.
 
@@ -31,12 +32,12 @@ DESCRIPTION:
   sandbox. Any arguments past '--' are passed cleanly into the sandbox agent runtime.
 
 EXAMPLES:
-  $(basename "$0")                # Start or attach to sandbox
-  $(basename "$0") --name-only    # Get the name without triggering side-effects
-  $(basename "$0") --remove       # Remove sandbox and configurations
-  $(basename "$0") --recreate     # Destroy and recreate sandbox
-  $(basename "$0") --help         # Show this message
-  $(basename "$0") -- --verbose   # Pass '--verbose' directly to your agent
+  $cmd                # Start or attach to sandbox
+  $cmd --name-only    # Get the name without triggering side-effects
+  $cmd --remove       # Remove sandbox and configurations
+  $cmd --recreate     # Destroy and recreate sandbox
+  $cmd --help         # Show this message
+  $cmd -- --verbose   # Pass '--verbose' directly to your agent
 
 EOF
 }
